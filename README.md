@@ -120,4 +120,4 @@ DragonClash/
 
 ## 🎨 Sanatçı Notu
 
-Tüm kart artwork'leri ve oyun görselleri proje sahibi tarafından dijital olarak çizilecektir. Şu an prototipta placeholder emoji kullanılmaktadır.
+Tüm kart artwork'leri ve oyun görsellerini kendim dijital olarak çizeceğim. Şu an prototipta placeholder emoji kullandım. Oyunun ana fikirleri oluşturması için.
