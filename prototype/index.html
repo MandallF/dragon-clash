@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dragon Clash: Realm of Scales</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ===== START SCREEN ===== -->
+  <div id="start-screen">
+    <h1>🐉 Dragon Clash</h1>
+    <p class="subtitle">Realm of Scales — Klanını seç ve savaşa gir!</p>
+
+    <div id="element-grid">
+      <button class="element-btn fire" onclick="startGame('fire')">
+        <span class="el-emoji">🔥</span>
+        <strong>Ateş</strong>
+        <span class="element-desc">Hızlı ve agresif. Yakıp geç taktiği.</span>
+      </button>
+      <button class="element-btn ice" onclick="startGame('ice')">
+        <span class="el-emoji">❄️</span>
+        <strong>Buz</strong>
+        <span class="element-desc">Kontrol ve dayanıklılık. Uzun oyun.</span>
+      </button>
+      <button class="element-btn nature" onclick="startGame('nature')">
+        <span class="el-emoji">🌿</span>
+        <strong>Doğa</strong>
+        <span class="element-desc">Zehir ve şifa. Yıpratma savaşı.</span>
+      </button>
+      <button class="element-btn stone" onclick="startGame('stone')">
+        <span class="el-emoji">🪨</span>
+        <strong>Taş</strong>
+        <span class="element-desc">Zırh ve savunma. Kale gibi dur.</span>
+      </button>
+      <button class="element-btn shadow" onclick="startGame('shadow')">
+        <span class="el-emoji">👁️</span>
+        <strong>Gölge</strong>
+        <span class="element-desc">Gizlilik ve baskı. Beklenmedik saldırı.</span>
+      </button>
+    </div>
+
+    <div style="color:#666;font-size:0.8em;text-align:center;max-width:500px">
+      <p>🔥 Ateş &gt; Doğa &gt; Taş &gt; Buz &gt; Ateş &nbsp;|&nbsp; 👁️ Gölge nötr</p>
+      <p style="margin-top:6px">Yaratıkları alana koy → Saldır → Düşman liderini 0 HP'ye düşür!</p>
+    </div>
+  </div>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <div id="game-screen" style="display:none">
+
+    <!-- AI AREA -->
+    <div id="ai-leader"></div>
+    <div id="ai-hand-display" title="AI'nın elindeki kartlar (gizli)"></div>
+    <div class="field-area" id="ai-field"></div>
+
+    <div class="battlefield-divider"></div>
+
+    <!-- PLAYER AREA -->
+    <div class="field-area" id="player-field"></div>
+
+    <!-- CONTROLS -->
+    <div id="controls">
+      <div style="display:flex;align-items:center;gap:8px">
+        <span class="mana-label">💎 Mana:</span>
+        <div id="mana-crystals"></div>
+        <span id="mana-label" style="font-size:0.8em;color:#aaa"></span>
+      </div>
+      <span id="status-msg"></span>
+      <button id="end-turn-btn" onclick="endPlayerTurn()">⚔️ Tur Bitir</button>
+    </div>
+
+    <div id="player-hand"></div>
+    <div id="player-leader"></div>
+
+    <!-- GAME LOG -->
+    <div id="game-log"></div>
+
+    <!-- QUICK HELP -->
+    <div style="color:#555;font-size:0.7em;padding:2px 8px">
+      💡 Kart seç → boş alan tıkla (yaratık) &nbsp;|&nbsp; Yaratık seç → düşman tıkla (saldır) &nbsp;|&nbsp; Büyü: seç → otomatik/hedef
+    </div>
+  </div>
+
+  <!-- ===== GAME OVER SCREEN ===== -->
+  <div id="gameover-screen" style="display:none">
+    <div id="gameover-box">
+      <h2 id="gameover-title"></h2>
+      <p id="gameover-msg"></p>
+      <button class="btn-restart" onclick="location.reload()">🔄 Yeniden Oyna</button>
+    </div>
+  </div>
+
+</div>
+<script src="game.js"></script>
+</body>
+</html>
